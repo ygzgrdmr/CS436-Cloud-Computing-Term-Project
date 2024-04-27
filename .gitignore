@@ -1,0 +1,9 @@
+# Ignore Terraform temporary files and sensitive data
+.terraform/
+*.tfstate
+*.tfstate.*
+terraform.tfvars
+*.tfvars
+crash.log
+.terraform.lock.hcl
+
