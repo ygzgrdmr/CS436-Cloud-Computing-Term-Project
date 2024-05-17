@@ -12,12 +12,11 @@ sudo systemctl enable docker
 cd infinity-search-solo-master
 pip3 install -r requirements.txt
 
-# Geri ana dizine dön
-cd ../..
+
 
 pip3 install --upgrade jinja2 flask
 
 # Docker image'ının oluşturulması ve çalıştırılması
-cd infinity-search-solo-master
+
 sudo docker build -t my-python-app .
 sudo docker run -p 5000:5000 -d my-python-app
