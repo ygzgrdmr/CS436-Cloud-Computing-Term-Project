@@ -8,10 +8,13 @@ sudo systemctl start docker
 sudo systemctl enable docker
 
 
-cd CS436-Term-Project/infinity-search-solo
-
 # Python bağımlılıklarının kurulumu
+cd infinity-search-solo-master
 pip3 install -r requirements.txt
+
+# Geri ana dizine dön
+cd ../..
+
 pip3 install --upgrade jinja2 flask
 
 # Docker image'ının oluşturulması ve çalıştırılması
