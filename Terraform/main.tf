@@ -2,7 +2,6 @@ provider "google" {
   credentials = file("/Users/yagizgurdamar/Downloads/cs-436-421508-d538efc809bc.json")
   project     = "cs-436-421508"
   region      = "us-central1"
-  alias       = "first"
 }
 
 resource "google_compute_firewall" "allow_http" {
@@ -36,7 +35,7 @@ resource "google_compute_firewall" "allow_https" {
 resource "google_compute_firewall" "allow_custom_port" {
   name    = "allow-custom-port"
   network = "default"
-  
+  project = "cs-436-421508"
 
   allow {
     protocol = "tcp"
@@ -47,9 +46,9 @@ resource "google_compute_firewall" "allow_custom_port" {
   target_tags   = ["custom-port"]
 }
 
-resource "google_compute_instance" "vm_instance_one" {
-  provider = google.first
-  name     = "example-instance-one"
+resource "google_compute_instance" "vm_instance" {
+  count    = 3
+  name     = "example-instance-${count.index}"
   machine_type = "e2-micro"
   zone     = "us-central1-a"
 
@@ -65,6 +64,10 @@ resource "google_compute_instance" "vm_instance_one" {
     network = "default"
     access_config {}
   }
-  
-  
+
+  metadata_startup_script = file("startup_script.sh")
+
+  metadata = {
+    ssh-keys = "myuser:${file("${path.module}/my_ssh_key.pub")}"
+  }
 }
