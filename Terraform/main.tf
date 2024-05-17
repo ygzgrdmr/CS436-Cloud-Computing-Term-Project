@@ -65,7 +65,7 @@ resource "google_compute_instance" "vm_instance" {
     access_config {}
   }
 
-  metadata_startup_script = file("startup_script.sh")
+  metadata_startup_script = file("CS436-Term-Project/startup_script.sh")
 
   metadata = {
     ssh-keys = "myuser:${file("${path.module}/my_ssh_key.pub")}"
