@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: infinity-search-deployment
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: infinity-search
+  template:
+    metadata:
+      labels:
+        app: infinity-search
+    spec:
+      containers:
+      - name: infinity-search
+        image: gcr.io/cs-436-421508/infinity-search-solo:latest
+        ports:
+        - containerPort: 5000
