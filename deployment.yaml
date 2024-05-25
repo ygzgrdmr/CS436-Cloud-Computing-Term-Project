@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: infinity-search-deployment
 spec:
-  replicas: 2
+  replicas: 3
   selector:
     matchLabels:
       app: infinity-search
@@ -19,3 +19,4 @@ spec:
         - containerPort: 5000
       imagePullSecrets:
       - name: gcr-json-key
+

@@ -2,7 +2,7 @@
 
 # Güncellemeler ve gerekli paketlerin kurulumu
 echo "Updating and installing required packages..."
-brew update
+#brew update
 #brew install --cask google-cloud-sdk
 #brew install kubectl
 
@@ -33,11 +33,12 @@ terraform apply -auto-approve
 cd .. 
 # Kubernetes cluster'a erişim sağlama
 echo "Setting up kubectl with GKE..."
-gcloud container clusters get-credentials search-engine-cluster --region us-central1
+gcloud container clusters get-credentials search-engine-cluster --zone us-central1-a
+
 
 # Docker kurulumu ve yapılandırması
 echo "Installing Docker..."
-brew install --cask docker
+#brew install --cask docker
 
 echo "Starting Docker Desktop..."
 open /Applications/Docker.app

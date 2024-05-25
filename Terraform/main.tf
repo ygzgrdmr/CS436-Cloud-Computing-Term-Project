@@ -2,16 +2,18 @@ provider "google" {
   credentials = file("/Users/yagizgurdamar/Downloads/cs-436-421508-d538efc809bc.json")
   project     = var.project_id
   region      = var.region
+  zone        = var.zone
 }
 
 resource "google_container_cluster" "primary" {
   name               = "search-engine-cluster"
-  location           = var.region
-  initial_node_count = 1  # Node sayısını 1'e düşürdük
+  location           = var.zone  # Tek bir zona yerleştir
+  initial_node_count = 4
+  deletion_protection = false 
 
   node_config {
     machine_type = "e2-medium"
-    disk_size_gb = 50  # Disk boyutunu düşürdük
+    disk_size_gb = 50
     oauth_scopes = [
       "https://www.googleapis.com/auth/compute",
       "https://www.googleapis.com/auth/devstorage.read_only",
@@ -45,5 +47,4 @@ resource "google_compute_firewall" "allow_http" {
   }
 
   source_ranges = ["0.0.0.0/0"]
-
 }

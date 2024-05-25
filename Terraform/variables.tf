@@ -1,9 +1,13 @@
+variable "project_id" {
+  description = "The GCP project ID"
+}
+
 variable "region" {
-  description = "The region to deploy to"
+  description = "The GCP region"
   default     = "us-central1"
 }
 
-variable "project_id" {
-  description = "The GCP project ID"
-  default     = "cs-436-421508"
+variable "zone" {
+  description = "The GCP zone"
+  default     = "us-central1-a"
 }

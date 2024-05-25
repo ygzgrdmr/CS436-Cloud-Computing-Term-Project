@@ -8,5 +8,5 @@ spec:
     kind: Deployment
     name: infinity-search-deployment
   minReplicas: 1
-  maxReplicas: 5
-  targetCPUUtilizationPercentage: 80
+  maxReplicas: 10
+  targetCPUUtilizationPercentage: 50
