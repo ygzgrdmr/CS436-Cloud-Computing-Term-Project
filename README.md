@@ -21,4 +21,4 @@ The proposed deployment process of Infinity Search Solo is visualized through a 
 To provide a clear understanding of the architecture and data flow within our project, we have included an Entity-Relationship (ER) diagram. This diagram details the interactions and relationships between entities such as Docker Containers, Cloud Build, and the Load Balancer.
 
 ### Cloud Design
-![Cloud Design ER Diagram](/cloud_design.png)
+![Cloud Design ER Diagram](/cloud-arch.jpg)
