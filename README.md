@@ -22,3 +22,11 @@ To provide a clear understanding of the architecture and data flow within our pr
 
 ### Cloud Design
 ![Cloud Design ER Diagram](/cloud-arch.jpg)
+
+## Project Report
+You can see the details of implementation and test results in the document 'cs436_term_project_report_Tarakci_Yildiz_Gurdamar.pdf'.
+
+## Demo Video Link
+You can watch the demo video.
+Link: [Demo Video and Results](https://drive.google.com/file/d/1PAAt7o0OQ_oidIccY3w6RE5Jmm11_Dxs/view).
+ 
