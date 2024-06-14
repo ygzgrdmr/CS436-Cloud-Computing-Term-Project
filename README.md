@@ -1,7 +1,7 @@
 # Infinity Search Solo - Cloud Deployment
 
 ## Overview
-Infinity Search Solo is a self-hostable metasearch engine designed for deployment on Google Cloud. This project automates the provisioning of resources using Terraform and manages components like Google Kubernetes Engine (GKE) and Cloud SQL.
+Infinity Search Solo is a self-hostable metasearch engine designed for deployment on Google Cloud. This project automates the provisioning of resources using Terraform and manages components like Google Kubernetes Engine (GKE).
 
 ## Team Members
 - Yağız Gürdamar
