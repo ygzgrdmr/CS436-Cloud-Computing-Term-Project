@@ -11,9 +11,9 @@ echo "Setting up Google Cloud SDK..."
 gcloud init
 
 # GCP kimlik dosyasını ayarlayın (Dosyanın yolunu değiştirin)
-GCP_KEY_PATH="/Users/yagizgurdamar/Downloads/cs-436-421508-d538efc809bc.json"
+GCP_KEY_PATH="/Users/cs-436.json"
 gcloud auth activate-service-account --key-file=$GCP_KEY_PATH
-gcloud config set project cs-436-421508
+gcloud config set project cs-436
 
 # Terraform kurulumu
 echo "Installing Terraform..."
@@ -52,8 +52,8 @@ done
 # Docker image'ini oluşturma ve yükleme
 echo "Building and pushing Docker image..."
 cd infinity-search-solo-master
-docker build -t gcr.io/cs-436-421508/infinity-search-solo:latest .
-docker push gcr.io/cs-436-421508/infinity-search-solo:latest
+docker build -t gcr.io/cs-436/infinity-search-solo:latest .
+docker push gcr.io/cs-436/infinity-search-solo:latest
 
 cd ..
 # Kubernetes secret oluşturma
@@ -62,7 +62,7 @@ kubectl create secret docker-registry gcr-json-key \
   --docker-server=https://gcr.io \
   --docker-username=_json_key \
   --docker-password="$(cat $GCP_KEY_PATH)" \
-  --docker-email=teo.grdmr@gmail.com
+  --docker-email=@gmail.com
 
 # Deployment ve servis dosyalarını uygulama
 echo "Applying Kubernetes configurations..."

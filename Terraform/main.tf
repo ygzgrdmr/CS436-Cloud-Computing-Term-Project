@@ -1,5 +1,5 @@
 provider "google" {
-  credentials = file("/Users/yagizgurdamar/Downloads/cs-436-421508-d538efc809bc.json")
+  credentials = file("/cs-436.json")
   project     = var.project_id
   region      = var.region
   zone        = var.zone
